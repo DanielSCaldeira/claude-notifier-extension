@@ -1,0 +1,212 @@
+{
+  "extensionName": {
+    "message": "Claude Notifier Pro"
+  },
+  "extensionDescription": {
+    "message": "Envía una notificación al móvil cuando Claude vuelve a estar disponible"
+  },
+  "actionDefaultTitle": {
+    "message": "Claude Notifier Pro"
+  },
+  "popupDocumentTitle": {
+    "message": "Claude Notifier Pro"
+  },
+  "popupEyebrow": {
+    "message": "Monitoreo en segundo plano"
+  },
+  "popupHeading": {
+    "message": "Claude Notifier"
+  },
+  "popupIntro": {
+    "message": "Configura el identificador de la organización y el tema de ntfy para recibir una alerta en cuanto Claude vuelva a estar disponible."
+  },
+  "orgIdLabel": {
+    "message": "Org ID de Claude"
+  },
+  "orgIdPlaceholder": {
+    "message": ""
+  },
+  "orgIdHint": {
+    "message": "Completa este campo con el ID capturado en la URL de uso de Claude."
+  },
+  "topicLabel": {
+    "message": "Tema de ntfy"
+  },
+  "topicPlaceholder": {
+    "message": "claude-xyz123"
+  },
+  "topicHint": {
+    "message": "Usa un tema exclusivo para evitar conflictos con otras notificaciones."
+  },
+  "languageLabel": {
+    "message": "Idioma"
+  },
+  "languageHint": {
+    "message": "Puedes seguir el idioma del navegador o forzar uno específico para la interfaz y las notificaciones."
+  },
+  "languageOptionAuto": {
+    "message": "Automático (idioma del navegador)"
+  },
+  "languageOptionPtBr": {
+    "message": "Portugués (Brasil)"
+  },
+  "languageOptionEn": {
+    "message": "Inglés"
+  },
+  "languageOptionEs": {
+    "message": "Español"
+  },
+  "saveButtonIdle": {
+    "message": "Guardar configuración"
+  },
+  "saveButtonBusy": {
+    "message": "Guardando..."
+  },
+  "testButtonIdle": {
+    "message": "Enviar prueba"
+  },
+  "testButtonBusy": {
+    "message": "Enviando..."
+  },
+  "checkStatusButtonIdle": {
+    "message": "Comprobar estado de Claude"
+  },
+  "checkStatusButtonBusy": {
+    "message": "Consultando..."
+  },
+  "popupInitialStatus": {
+    "message": "Indica un tema de ntfy y guarda para activar las alertas automáticas."
+  },
+  "helpSummary": {
+    "message": "Ayuda: cómo configurar la extensión"
+  },
+  "helpStep1Prefix": {
+    "message": "Abre la página"
+  },
+  "helpStep2": {
+    "message": "Inspecciona el navegador y abre la pestaña de red para seguir las solicitudes generadas."
+  },
+  "helpStep3Prefix": {
+    "message": "Haz clic en el botón de actualizar de la página de uso y localiza la solicitud a"
+  },
+  "helpStep4": {
+    "message": "Copia el ID usado en la URL y pégalo en el campo Org ID de Claude."
+  },
+  "helpStep5": {
+    "message": "Instala la aplicación ntfy y crea tu clave o tema."
+  },
+  "helpStep6": {
+    "message": "Añade esa información en el campo Tema de ntfy para recibir las notificaciones."
+  },
+  "helpNote": {
+    "message": "Si el ID no aparece enseguida, vuelve a pulsar actualizar con el panel de red abierto hasta capturar la solicitud."
+  },
+  "footerNote": {
+    "message": "La alerta de liberación depende de una sesión autenticada en claude.ai dentro del navegador."
+  },
+  "statusDefaultMessage": {
+    "message": "No se pudo consultar el estado de Claude."
+  },
+  "statusSaveSuccess": {
+    "message": "Configuración guardada. El monitoreo seguirá activo en segundo plano."
+  },
+  "statusSaveSuccessWithoutTopic": {
+    "message": "Configuración guardada. Añade un tema de ntfy para activar las alertas remotas."
+  },
+  "statusTopicRequiredTest": {
+    "message": "Introduce un tema antes de enviar la prueba."
+  },
+  "statusOrgIdRequired": {
+    "message": "Introduce el Org ID de Claude antes de consultar el estado."
+  },
+  "statusSendingTest": {
+    "message": "Enviando notificación de prueba a ntfy..."
+  },
+  "testNotificationBody": {
+    "message": "¡Prueba de notificación de Claude!"
+  },
+  "testNotificationTitle": {
+    "message": "Prueba Claude"
+  },
+  "statusTestSuccess": {
+    "message": "Notificación de prueba enviada correctamente."
+  },
+  "statusTestFailure": {
+    "message": "No se pudo enviar la notificación. Revisa el tema y tu conexión."
+  },
+  "statusChecking": {
+    "message": "Consultando el estado actual de Claude..."
+  },
+  "statusCheckFailure": {
+    "message": "No se pudo consultar el estado de Claude. Inténtalo de nuevo."
+  },
+  "notificationTitleAvailable": {
+    "message": "Claude disponible"
+  },
+  "notificationTitleBlocked": {
+    "message": "Claude bloqueado"
+  },
+  "notificationTitleError": {
+    "message": "Error al consultar Claude"
+  },
+  "statusAuth": {
+    "message": "No se encontró la sesión de Claude. Abre claude.ai e inicia sesión en este navegador."
+  },
+  "statusUnavailable": {
+    "message": "No fue posible consultar el estado ahora mismo. Inténtalo de nuevo en unos instantes."
+  },
+  "statusUnexpectedResponse": {
+    "message": "La API de Claude devolvió una respuesta inesperada al consultar el uso."
+  },
+  "statusBlockedMessage": {
+    "message": "Claude está bloqueado en este momento. Se liberará aproximadamente en $1."
+  },
+  "statusAvailableMessage": {
+    "message": "Claude ya está disponible. Uso actual: $1% del límite de 5 horas."
+  },
+  "statusSevenDayWithReset": {
+    "message": "Límite semanal: $1%. Se libera el $2."
+  },
+  "statusSevenDayUsage": {
+    "message": "Uso semanal: $1%."
+  },
+  "statusUnlockNotification": {
+    "message": "¡Claude volvió a estar disponible!"
+  },
+  "notificationSenderTitle": {
+    "message": "Claude Notifier"
+  },
+  "localNotificationFailureTitle": {
+    "message": "Error al enviar ntfy"
+  },
+  "localNotificationFailureMessage": {
+    "message": "No fue posible enviar la notificación remota."
+  },
+  "donationPixQrAlt": {
+    "message": "Código QR de Pix para $1"
+  },
+  "donationLinkAriaLabel": {
+    "message": "Abrir apoyo vía $1 en una nueva pestaña"
+  },
+  "opensInNewTabSuffix": {
+    "message": " (se abre en una nueva pestaña)"
+  },
+  "detailLocalNotificationFailedRemoteSent": {
+    "message": "ntfy se envió, pero la notificación local no se mostró: $1"
+  },
+  "detailLocalNotificationFailedOnlyLocal": {
+    "message": "No fue posible mostrar la notificación local: $1"
+  },
+  "statusNotifyFailureWithError": {
+    "message": "La consulta del estado se completó, pero falló el envío de la notificación: $1"
+  },
+  "statusUnexpectedCheckFailure": {
+    "message": "Fallo inesperado al consultar el estado de Claude."
+  },
+  "statusErrorNotificationFailure": {
+    "message": "La consulta falló y tampoco se pudo enviar la notificación de error."
+  },
+  "unknownError": {
+    "message": "error desconocido"
+  }
+}

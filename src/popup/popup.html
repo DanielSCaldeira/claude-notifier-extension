@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Notifier Pro</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card" aria-labelledby="popup-title">
+        <div class="eyebrow" data-i18n="popupEyebrow">Monitoramento em segundo plano</div>
+        <h1 id="popup-title" data-i18n="popupHeading">Claude Notifier</h1>
+        <p class="intro" data-i18n="popupIntro">
+          Configure o identificador da organização e o tópico do ntfy para receber o aviso assim que o uso do Claude for liberado.
+        </p>
+
+        <form id="configForm" class="config-form" novalidate aria-labelledby="popup-title" aria-describedby="status statusDetail">
+          <div class="fields">
+            <div class="field">
+              <label for="orgId" data-i18n="orgIdLabel">Org ID do Claude</label>
+              <input
+                id="orgId"
+                name="orgId"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                spellcheck="false"
+                aria-describedby="orgIdHint"
+                data-i18n-placeholder="orgIdPlaceholder"
+                placeholder=""
+              />
+              <p id="orgIdHint" class="hint" data-i18n="orgIdHint">Preencha esse campo com o ID capturado na URL de uso do Claude.</p>
+            </div>
+
+            <div class="field">
+              <label for="topic" data-i18n="topicLabel">Tópico do ntfy</label>
+              <input
+                id="topic"
+                name="topic"
+                type="text"
+                inputmode="text"
+                autocomplete="off"
+                spellcheck="false"
+                aria-describedby="topicHint"
+                data-i18n-placeholder="topicPlaceholder"
+                placeholder="claude-xyz123"
+              />
+              <p id="topicHint" class="hint" data-i18n="topicHint">Use um tópico exclusivo para evitar colisão com outras notificações.</p>
+            </div>
+
+            <div class="field">
+              <label for="language" data-i18n="languageLabel">Idioma</label>
+              <select id="language" name="language" aria-describedby="languageHint">
+                <option value="auto" data-i18n="languageOptionAuto">Automático (idioma do navegador)</option>
+                <option value="pt-BR" data-i18n="languageOptionPtBr">Português (Brasil)</option>
+                <option value="en" data-i18n="languageOptionEn">Inglês</option>
+                <option value="es" data-i18n="languageOptionEs">Espanhol</option>
+              </select>
+              <p id="languageHint" class="hint" data-i18n="languageHint">Você pode seguir o idioma do navegador ou forçar um idioma específico para a interface e as notificações.</p>
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="save" class="primary" type="submit" aria-controls="status statusDetail" data-i18n="saveButtonIdle">Salvar configuração</button>
+            <button id="test" class="secondary" type="button" aria-controls="status statusDetail" data-i18n="testButtonIdle">Enviar teste</button>
+          </div>
+
+          <div class="actions-secondary">
+            <button id="checkStatus" class="secondary wide" type="button" aria-controls="status statusDetail" data-i18n="checkStatusButtonIdle">Verificar status do Claude</button>
+          </div>
+
+          <p id="status" class="status info" role="status" aria-live="polite" aria-atomic="true" data-i18n="popupInitialStatus">
+            Informe um tópico do ntfy e salve para ativar o alerta automático.
+          </p>
+
+          <p id="statusDetail" class="status-detail" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        </form>
+
+        <section id="donationPanel" class="donation-panel" hidden aria-labelledby="donation-title">
+          <div class="donation-panel-header">
+            <div class="donation-badge">Apoio</div>
+            <h2 id="donation-title" class="donation-title"></h2>
+            <p class="donation-copy"></p>
+          </div>
+          <div id="donationMethods" class="donation-methods"></div>
+        </section>
+
+        <details class="help-panel">
+          <summary data-i18n="helpSummary">Ajuda: como configurar a extensão</summary>
+          <ol class="help-list">
+            <li>
+              <span data-i18n="helpStep1Prefix">Entre na página</span>
+              <a href="https://claude.ai/settings/usage" target="_blank" rel="noreferrer">claude.ai/settings/usage<span class="sr-only" data-i18n="opensInNewTabSuffix"> (abre em nova aba)</span></a>.
+            </li>
+            <li data-i18n="helpStep2">Inspecione o navegador e abra a aba de rede para acompanhar as requisições geradas.</li>
+            <li>
+              <span data-i18n="helpStep3Prefix">Clique no botão de atualizar da página de uso e localize o request para</span>
+              <span class="help-inline-url">https://claude.ai/api/organizations/{ID}/usage</span>.
+            </li>
+            <li data-i18n="helpStep4">Recupere o ID usado na URL e insira esse valor no campo Org ID do Claude.</li>
+            <li data-i18n="helpStep5">Baixe o aplicativo ntfy e crie sua chave ou tópico.</li>
+            <li data-i18n="helpStep6">Adicione essa informação no campo Tópico do ntfy para receber as notificações.</li>
+          </ol>
+          <p class="help-note" data-i18n="helpNote">
+            Se o ID não aparecer de imediato, repita o clique em atualizar com o painel de rede aberto até capturar a requisição.
+          </p>
+        </details>
+
+        <p class="footer-note" data-i18n="footerNote">
+          O aviso de liberação depende de uma sessão autenticada em claude.ai no navegador.
+        </p>
+      </section>
+    </main>
+    <script src="popup-pix-config.js"></script>
+    <script src="popup-donations-config.js"></script>
+    <script src="../shared/shared-i18n.js"></script>
+    <script src="../shared/shared-notifications.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

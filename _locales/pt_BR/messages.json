@@ -1,0 +1,215 @@
+{
+  "extensionName": {
+    "message": "Claude Notifier Pro"
+  },
+  "extensionDescription": {
+    "message": "Notifica no celular quando o Claude liberar uso"
+  },
+  "actionDefaultTitle": {
+    "message": "Claude Notifier Pro"
+  },
+  "popupDocumentTitle": {
+    "message": "Claude Notifier Pro"
+  },
+  "popupEyebrow": {
+    "message": "Monitoramento em segundo plano"
+  },
+  "popupHeading": {
+    "message": "Claude Notifier"
+  },
+  "popupIntro": {
+    "message": "Configure o identificador da organização e o tópico do ntfy para receber o aviso assim que o uso do Claude for liberado."
+  },
+  "orgIdLabel": {
+    "message": "Org ID do Claude"
+  },
+  "orgIdPlaceholder": {
+    "message": ""
+  },
+  "orgIdHint": {
+    "message": "Preencha esse campo com o ID capturado na URL de uso do Claude."
+  },
+  "topicLabel": {
+    "message": "Tópico do ntfy"
+  },
+  "topicPlaceholder": {
+    "message": "claude-xyz123"
+  },
+  "topicHint": {
+    "message": "Use um tópico exclusivo para evitar colisão com outras notificações."
+  },
+  "languageLabel": {
+    "message": "Idioma"
+  },
+  "languageHint": {
+    "message": "Você pode seguir o idioma do navegador ou forçar um idioma específico para a interface e as notificações."
+  },
+  "languageOptionAuto": {
+    "message": "Automático (idioma do navegador)"
+  },
+  "languageOptionPtBr": {
+    "message": "Português (Brasil)"
+  },
+  "languageOptionEn": {
+    "message": "Inglês"
+  },
+  "languageOptionEs": {
+    "message": "Espanhol"
+  },
+  "saveButtonIdle": {
+    "message": "Salvar configuração"
+  },
+  "saveButtonBusy": {
+    "message": "Salvando..."
+  },
+  "testButtonIdle": {
+    "message": "Enviar teste"
+  },
+  "testButtonBusy": {
+    "message": "Enviando..."
+  },
+  "checkStatusButtonIdle": {
+    "message": "Verificar status do Claude"
+  },
+  "checkStatusButtonBusy": {
+    "message": "Consultando..."
+  },
+  "popupInitialStatus": {
+    "message": "Informe um tópico do ntfy e salve para ativar o alerta automático."
+  },
+  "helpSummary": {
+    "message": "Ajuda: como configurar a extensão"
+  },
+  "helpStep1Prefix": {
+    "message": "Entre na página"
+  },
+  "helpStep2": {
+    "message": "Inspecione o navegador e abra a aba de rede para acompanhar as requisições geradas."
+  },
+  "helpStep3Prefix": {
+    "message": "Clique no botão de atualizar da página de uso e localize o request para"
+  },
+  "helpStep4": {
+    "message": "Recupere o ID usado na URL e insira esse valor no campo Org ID do Claude."
+  },
+  "helpStep5": {
+    "message": "Baixe o aplicativo ntfy e crie sua chave ou tópico."
+  },
+  "helpStep6": {
+    "message": "Adicione essa informação no campo Tópico do ntfy para receber as notificações."
+  },
+  "helpNote": {
+    "message": "Se o ID não aparecer de imediato, repita o clique em atualizar com o painel de rede aberto até capturar a requisição."
+  },
+  "footerNote": {
+    "message": "O aviso de liberação depende de uma sessão autenticada em claude.ai no navegador."
+  },
+  "statusDefaultMessage": {
+    "message": "Não foi possível consultar o status do Claude."
+  },
+  "statusTopicRequiredSave": {
+    "message": "Digite um tópico válido antes de salvar."
+  },
+  "statusSaveSuccess": {
+    "message": "Configuração salva. O monitoramento continuará em segundo plano."
+  },
+  "statusSaveSuccessWithoutTopic": {
+    "message": "Configuração salva. Adicione um tópico do ntfy para ativar os alertas remotos."
+  },
+  "statusTopicRequiredTest": {
+    "message": "Digite um tópico antes de enviar o teste."
+  },
+  "statusOrgIdRequired": {
+    "message": "Digite o Org ID do Claude antes de consultar o status."
+  },
+  "statusSendingTest": {
+    "message": "Enviando notificação de teste para o ntfy..."
+  },
+  "testNotificationBody": {
+    "message": "Teste de notificação do Claude!"
+  },
+  "testNotificationTitle": {
+    "message": "Teste Claude"
+  },
+  "statusTestSuccess": {
+    "message": "Notificação de teste enviada com sucesso."
+  },
+  "statusTestFailure": {
+    "message": "Falha ao enviar a notificação. Verifique o tópico e sua conexão."
+  },
+  "statusChecking": {
+    "message": "Consultando status atual do Claude..."
+  },
+  "statusCheckFailure": {
+    "message": "Falha ao consultar o status do Claude. Tente novamente."
+  },
+  "notificationTitleAvailable": {
+    "message": "Claude liberado"
+  },
+  "notificationTitleBlocked": {
+    "message": "Claude bloqueado"
+  },
+  "notificationTitleError": {
+    "message": "Erro ao consultar Claude"
+  },
+  "statusAuth": {
+    "message": "Sessão do Claude não encontrada. Abra o claude.ai e faça login no navegador."
+  },
+  "statusUnavailable": {
+    "message": "Não foi possível consultar o status agora. Tente novamente em instantes."
+  },
+  "statusUnexpectedResponse": {
+    "message": "Resposta inesperada da API do Claude ao consultar o uso."
+  },
+  "statusBlockedMessage": {
+    "message": "Claude bloqueado no momento. Libera em aproximadamente $1."
+  },
+  "statusAvailableMessage": {
+    "message": "Claude liberado agora. Uso atual: $1% do limite de 5 horas."
+  },
+  "statusSevenDayWithReset": {
+    "message": "Limite semanal: $1%. Libera em $2."
+  },
+  "statusSevenDayUsage": {
+    "message": "Uso semanal: $1%."
+  },
+  "statusUnlockNotification": {
+    "message": "Claude liberado!"
+  },
+  "notificationSenderTitle": {
+    "message": "Claude Notifier"
+  },
+  "localNotificationFailureTitle": {
+    "message": "Falha ao enviar ntfy"
+  },
+  "localNotificationFailureMessage": {
+    "message": "Não foi possível enviar a notificação remota."
+  },
+  "donationPixQrAlt": {
+    "message": "QR Code do Pix para $1"
+  },
+  "donationLinkAriaLabel": {
+    "message": "Abrir apoio via $1 em uma nova aba"
+  },
+  "opensInNewTabSuffix": {
+    "message": " (abre em nova aba)"
+  },
+  "detailLocalNotificationFailedRemoteSent": {
+    "message": "ntfy enviado, mas a notificação local não foi exibida: $1"
+  },
+  "detailLocalNotificationFailedOnlyLocal": {
+    "message": "Não foi possível exibir a notificação local: $1"
+  },
+  "statusNotifyFailureWithError": {
+    "message": "O status foi consultado, mas houve falha ao enviar a notificação: $1"
+  },
+  "statusUnexpectedCheckFailure": {
+    "message": "Falha inesperada ao consultar o status do Claude."
+  },
+  "statusErrorNotificationFailure": {
+    "message": "Houve falha na consulta e também não foi possível enviar a notificação de erro."
+  },
+  "unknownError": {
+    "message": "erro desconhecido"
+  }
+}

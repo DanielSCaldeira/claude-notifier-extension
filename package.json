@@ -1,0 +1,17 @@
+{
+  "name": "claude-notifier-extension",
+  "chromeVersionBase": "1.1",
+  "scripts": {
+    "test": "vitest run",
+    "build": "node scripts/build-release.mjs",
+    "package": "node scripts/build-release.mjs --zip",
+    "release": "npm test && npm run package"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "esbuild": "^0.25.3",
+    "html-minifier-terser": "^7.2.0",
+    "jsdom": "^26.1.0",
+    "vitest": "^3.2.4"
+  }
+}

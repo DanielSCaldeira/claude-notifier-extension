@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Claude Notifier">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#0f172a" />
+  <rect x="10" y="10" width="108" height="108" rx="22" fill="url(#bg)" opacity="0.18" />
+  <path d="M41 35h31c16 0 27 9 27 24 0 10-5 18-14 22l15 18H82L70 84H57v15H41V35zm16 14v21h14c8 0 12-4 12-11s-4-10-12-10H57z" fill="#e5eefb"/>
+  <circle cx="96" cy="35" r="8" fill="#22c55e" />
+</svg>
