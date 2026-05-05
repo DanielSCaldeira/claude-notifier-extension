@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Screenshot 1 — Popup Principal (1280x800)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1280px;
+    height: 800px;
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #E2E8F0;
+  }
+
+  /* Simulated Chrome browser window */
+  .browser {
+    width: 1280px;
+    height: 800px;
+    background: #F8FAFC;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  }
+
+  /* Browser chrome */
+  .browser-chrome {
+    background: #DDE1E7;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px 0;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .browser-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: #FF5F57; }
+  .dot-yellow { background: #FEBC2E; }
+  .dot-green { background: #28C840; }
+
+  .browser-tabs {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    margin-left: 24px;
+  }
+  .tab {
+    background: #F8FAFC;
+    border-radius: 8px 8px 0 0;
+    padding: 6px 16px;
+    font-size: 12px;
+    color: #1E293B;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #CBD5E1;
+    border-bottom: none;
+    min-width: 180px;
+  }
+  .tab-favicon {
+    width: 14px; height: 14px;
+    border-radius: 2px;
+    background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  }
+
+  .omnibar {
+    background: #E2E8F0;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 13px;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 500px;
+    margin-left: 60px;
+    border: 1px solid #CBD5E1;
+  }
+
+  /* Browser toolbar row */
+  .browser-toolbar {
+    background: #DDE1E7;
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    border-bottom: 1px solid #CBD5E1;
+    flex-shrink: 0;
+  }
+  .ext-btn {
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    background: #E2E8F0;
+    border: 1px solid #CBD5E1;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .ext-btn-active {
+    background: rgba(37,99,235,0.1);
+    border-color: rgba(37,99,235,0.3);
+  }
+  .ext-icon {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  }
+  .ei-left { width: 50%; height: 100%; background: #2196F3; display: flex; align-items: center; justify-content: flex-end; padding-right: 1px; }
+  .ei-right { width: 50%; height: 100%; background: #4CAF50; }
+  .ei-c { font-size: 10px; font-weight: 800; color: #fff; }
+
+  /* Page content — claude.ai mock */
+  .page-content {
+    flex: 1;
+    background: #FAFAFA;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Claude.ai sidebar */
+  .claude-sidebar {
+    width: 260px;
+    background: #F1F5F9;
+    border-right: 1px solid #E2E8F0;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .sidebar-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1E293B;
+    padding: 8px 0 16px;
+    letter-spacing: -0.5px;
+  }
+  .sidebar-logo span { color: #7C3AED; }
+  .sidebar-item {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #64748B;
+    cursor: pointer;
+  }
+  .sidebar-item-active {
+    background: #E2E8F0;
+    color: #1E293B;
+    font-weight: 500;
+  }
+
+  /* Claude.ai main area */
+  .claude-main {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .usage-card {
+    background: #FFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+    width: 560px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  }
+  .usage-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .usage-bar-bg {
+    height: 8px;
+    background: #E2E8F0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  .usage-bar-fill {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #EF4444, #F97316);
+    border-radius: 4px;
+  }
+  .usage-label {
+    font-size: 13px;
+    color: #94A3B8;
+  }
+  .usage-label strong { color: #EF4444; }
+
+  .chat-messages {
+    width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .msg-user {
+    align-self: flex-end;
+    background: #7C3AED;
+    color: #FFF;
+    padding: 12px 16px;
+    border-radius: 16px 16px 4px 16px;
+    font-size: 14px;
+    max-width: 70%;
+  }
+  .msg-ai {
+    align-self: flex-start;
+    background: #FFF;
+    border: 1px solid #E2E8F0;
+    color: #1E293B;
+    padding: 12px 16px;
+    border-radius: 16px 16px 16px 4px;
+    font-size: 14px;
+    max-width: 75%;
+    line-height: 1.5;
+  }
+
+  /* Extension popup overlay */
+  .popup-overlay {
+    position: absolute;
+    top: 48px;
+    right: 16px;
+    width: 340px;
+    background: #1E293B;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 8px 48px rgba(0,0,0,0.5),
+      0 2px 8px rgba(37,99,235,0.2);
+    z-index: 100;
+  }
+
+  .popup-header {
+    background: linear-gradient(135deg, #1E3A5F 0%, #1a3a2e 100%);
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .popup-icon {
+    width: 44px; height: 44px; border-radius: 10px; overflow: hidden;
+    display: flex; box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .pi-left { width: 50%; height: 100%; background: #2196F3; display: flex; align-items: center; justify-content: flex-end; padding-right: 1px; }
+  .pi-right { width: 50%; height: 100%; background: #4CAF50; }
+  .pi-c { font-size: 15px; font-weight: 800; color: #fff; }
+  .popup-title-wrap {}
+  .popup-eyebrow {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    color: #64748B; font-weight: 600;
+  }
+  .popup-title {
+    font-size: 16px; font-weight: 700; color: #F1F5F9;
+  }
+
+  .popup-body {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .popup-field { display: flex; flex-direction: column; gap: 5px; }
+  .popup-label {
+    font-size: 11px; font-weight: 600; color: #64748B;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .popup-input {
+    background: #0F172A; border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 9px 12px; font-size: 13px;
+    color: #94A3B8; font-family: 'Courier New', monospace;
+  }
+
+  .popup-status-row {
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+    border-radius: 8px; padding: 10px 14px;
+  }
+  .popup-status-label {
+    font-size: 12px; font-weight: 600; color: #FCA5A5;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #EF4444; }
+  .popup-status-value { font-size: 11px; color: #94A3B8; }
+
+  .popup-btn {
+    background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3);
+    border-radius: 8px; padding: 10px; text-align: center;
+    font-size: 13px; font-weight: 600; color: #93C5FD; cursor: pointer;
+  }
+
+  /* Caption below screenshot */
+  .caption-bar {
+    background: #1E293B;
+    padding: 10px 20px;
+    font-size: 12px;
+    color: #64748B;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .caption-bar strong { color: #94A3B8; }
+</style>
+</head>
+<body>
+<div class="browser">
+  <!-- Browser chrome -->
+  <div class="browser-chrome">
+    <div class="browser-controls">
+      <div class="dot dot-red"></div>
+      <div class="dot dot-yellow"></div>
+      <div class="dot dot-green"></div>
+    </div>
+    <div style="display:flex; align-items:center; gap: 8px; padding-bottom: 6px;">
+      <div class="browser-tabs">
+        <div class="tab">
+          <div class="tab-favicon"></div>
+          Claude — claude.ai
+        </div>
+      </div>
+      <div class="omnibar">
+        🔒&nbsp; claude.ai
+      </div>
+    </div>
+  </div>
+
+  <!-- Toolbar with extension icon -->
+  <div class="browser-toolbar">
+    <div class="ext-btn">⋯</div>
+    <div class="ext-btn">🧩</div>
+    <div class="ext-icon ext-btn-active" title="Claude Notifier Pro">
+      <div class="ei-left"><span class="ei-c">c</span></div>
+      <div class="ei-right"></div>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-content">
+    <!-- Claude sidebar -->
+    <div class="claude-sidebar">
+      <div class="sidebar-logo">cl<span>au</span>de</div>
+      <div class="sidebar-item sidebar-item-active">💬 New chat</div>
+      <div class="sidebar-item">📋 Usage</div>
+      <div class="sidebar-item">⚙️ Settings</div>
+      <div style="margin-top:16px; font-size:11px; color:#94A3B8; padding: 0 12px; text-transform:uppercase; letter-spacing:0.5px; font-weight:600;">Recent</div>
+      <div class="sidebar-item">Write a Python script...</div>
+      <div class="sidebar-item">Explain async/await...</div>
+      <div class="sidebar-item">Review my PR...</div>
+    </div>
+
+    <!-- Main chat area -->
+    <div class="claude-main">
+      <div class="usage-card">
+        <div class="usage-title">Usage limit reached</div>
+        <div class="usage-bar-bg"><div class="usage-bar-fill"></div></div>
+        <div class="usage-label">Usage window resets in <strong>4h 32m</strong> · Next reset at 09:15 AM</div>
+      </div>
+
+      <div class="chat-messages">
+        <div class="msg-user">Can you help me refactor this function?</div>
+        <div class="msg-ai">I'd be happy to help! However, your usage limit has been reached for this 5-hour window. You'll be able to continue at 09:15 AM.</div>
+      </div>
+    </div>
+
+    <!-- Extension popup overlay (simulating click on icon) -->
+    <div class="popup-overlay">
+      <div class="popup-header">
+        <div class="popup-icon">
+          <div class="pi-left"><span class="pi-c">c</span></div>
+          <div class="pi-right"></div>
+        </div>
+        <div class="popup-title-wrap">
+          <div class="popup-eyebrow">Background monitoring</div>
+          <div class="popup-title">Claude Notifier</div>
+        </div>
+      </div>
+      <div class="popup-body">
+        <div class="popup-field">
+          <div class="popup-label">Org ID</div>
+          <div class="popup-input">org_01AbCdEfGhIjKlMn</div>
+        </div>
+        <div class="popup-field">
+          <div class="popup-label">ntfy Topic</div>
+          <div class="popup-input">my-claude-alerts</div>
+        </div>
+        <div class="popup-status-row">
+          <div class="popup-status-label">
+            <div class="status-dot"></div>
+            Limit reached
+          </div>
+          <div class="popup-status-value">Reset at 09:15 AM</div>
+        </div>
+        <div class="popup-btn">✓ Monitoring active — will notify at reset</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
